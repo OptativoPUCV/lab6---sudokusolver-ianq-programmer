@@ -85,3 +85,24 @@ Sat 06 May 2023 11:10:06 PM UTC:
  tests:  6|2
 total_score: 45/70
 a88b29f
+Sat 06 May 2023 11:10:43 PM UTC: 
+ sudoku.c | 19 ++++++-------------
+ 1 file changed, 6 insertions(+), 13 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:97:12: error: implicit declaration of function ‘busqueda’ [-Werror=implicit-function-declaration]
+   97 |         if(busqueda(aux,i) == false)
+      |            ^~~~~~~~
+sudoku.c:97:31: error: ‘false’ undeclared (first use in this function)
+   97 |         if(busqueda(aux,i) == false)
+      |                               ^~~~~
+sudoku.c:4:1: note: ‘false’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    3 | #include "list.h"
+  +++ |+#include <stdbool.h>
+    4 | 
+sudoku.c:97:31: note: each undeclared identifier is reported only once for each function it appears in
+   97 |         if(busqueda(aux,i) == false)
+      |                               ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+12f139c
